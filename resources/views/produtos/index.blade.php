@@ -10,6 +10,13 @@
                     Adicionar produto
                 </a>
             </div>
+            <div>
+                @if (session()->has('sucess'))
+                    <div>
+                    {{session('sucess')}}
+                    </div>
+                @endif
+            </div>
             <br>
             <table class="table">
                     <thead>

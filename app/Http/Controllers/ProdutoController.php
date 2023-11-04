@@ -38,14 +38,14 @@ class ProdutoController extends Controller
     {
         $data = $request->validate([
             'nome_do_produto' => 'required',
-            'descricao'=> 'nullable',
+            'descricao'=> 'required',
             'preco_do_produto' => 'required',
             'quantidade_em_estoque' => 'required:number',
         ]);
 
         $novoProduto = Produto::create($data);
 
-        return redirect(view('produtos.index'));
+        return redirect(route('produto.index'))->with('sucess','Produto cadastrado com sucesso!');
 
     }
 
@@ -89,7 +89,7 @@ class ProdutoController extends Controller
 
         $produto->update($data);
 
-        return redirect(view('produtos.index'));
+        return redirect(route('produto.index'))->with('sucess','Produto atualizado com sucesso');
     }
 
     /**
@@ -102,6 +102,6 @@ class ProdutoController extends Controller
     {
         $produto->delete();
         
-        return redirect(view('produtos.index'));
+        return redirect(route('produto.index'))->with('sucess','Produto excluído com sucesso');;
     }
 }
