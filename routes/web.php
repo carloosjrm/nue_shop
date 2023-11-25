@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
-
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,7 @@ Route::post('/produto', [ProdutoController::class, 'store'])->name('produto.stor
 Route::get('/produto/{produto}/edit', [ProdutoController::class, 'edit'])->name('produto.edit');
 Route::put('/produto/{produto}/update', [ProdutoController::class, 'update'])->name('produto.update');
 Route::delete('/produto/{produto}/destroy', [ProdutoController::class, 'destroy'])->name('produto.destroy');
+
+Route::get('/login{erro?}', [LoginController::class, 'index'])->name('login.index');
+Route::post('/login', [LoginController::class, 'autenticar'])->name('login.autenticar');
+

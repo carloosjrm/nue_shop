@@ -3,7 +3,7 @@
 @section('content')
 <div class="row" style="margin:20px;">
     <div class="table-responsive">
-        <h2>Catálogo de produtos</h2>
+        <h2> <img src="logo.jpg" width="80px"> Catálogo de produtos</h2>
             <br>
             <div class="card-body">
                 <a href="{{ route('produto.create') }}" class="btn btn-success" title="Adicionar produto"> 
